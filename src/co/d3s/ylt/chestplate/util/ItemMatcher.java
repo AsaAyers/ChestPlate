@@ -41,13 +41,15 @@ public class ItemMatcher {
     }
     
     HashMap<String, ItemMatch[]> materials = new HashMap<String, ItemMatch[]>();
-    
-    YamlConfiguration config;
+
     public void load() {
         materials.clear();
         File folder = cp.getDataFolder();
         File configfile = new File(folder, "matcher.yml");
-        config = YamlConfiguration.loadConfiguration(configfile);
+        if (!configfile.exists()) {
+            return;
+        }
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(configfile);
         Map<String, Object> section = config.getConfigurationSection("multiblock").getValues(false);
         
         
