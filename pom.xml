@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>co.d3s.ylt.chestplate</groupId>
   <artifactId>ChestPlate</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>ChestPlate</name>
   <url>https://github.com/ylt/ChestPlate</url>
   <repositories>
       <repository>
-          <id>craftbukkit-repo</id>
-          <url>https://github.com/Bukkit/CraftBukkit</url>
+          <id>bukkit-repo</id>
+          <url>http://repo.bukkit.org/content/groups/public/</url>
       </repository>
   </repositories>
   <dependencies>
@@ -21,7 +21,9 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
-  <properties>
+
+
+    <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.5</maven.compiler.source>
     <maven.compiler.target>1.5</maven.compiler.target>
@@ -30,6 +32,8 @@
   <build>
       <resources>
           <resource>
+              <targetPath>.</targetPath>
+              <filtering>true</filtering>
               <directory>src</directory>
               <includes>
                   <include>plugin.yml</include>
